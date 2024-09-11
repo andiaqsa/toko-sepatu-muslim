@@ -6,7 +6,7 @@
 
                         Jawab:
 1). Langkah-langkah yang dilakukan:
-1. Membuat direktori utama, saya menamakannya Toko-Sepatu_sunnah
+1. Membuat direktori utama, saya menamakannya toko-sepatu-muslim
 2. Mengaktifkan virtual environment melalui command prompt
 3. Menjalankan perintah di command prompt untuk membuat aplikasi bernama main di dalam proyek e-commerce
 4. Mendaftarkan aplikasi main dengan menambahkan 'main' ke variable INSTALLED_APPS di file setting.py
@@ -52,7 +52,7 @@
 17. Kemudian membuat proyek baru di pws
 18. Pada settings.py di proyek Django yang sudah kamu buat tadi,
     tambahkan URL deployment PWS pada ALLOWED_HOSTS. ...
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "andi-aqsa-ecommerce.pbp.cs.ui.ac.id"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "andi-aqsa-tokosepatumuslim.pbp.cs.ui.ac.id"]
 19. Setelah mendapatkan Project Credentials dan Project Command, jalankan instruksi project command
 
 
