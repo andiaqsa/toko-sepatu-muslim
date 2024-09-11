@@ -37,7 +37,7 @@
     path('', show_main, name='show_main'),
    ]
 10. Menambahkan rute URL dalam urls.py proyek untuk menghubungkannya ke tampilan main
-11. Buka berkas urls.py di dalam direktori proyek e_commerce, 
+11. Buka berkas urls.py di dalam direktori proyek toko-sepatu-muslim, 
     bukan yang ada di dalam direktori aplikasi main. 
 12. Lalu menambahkan import, from django.urls import path, include
 13. Menambahkan rute url untuk mengarahkan ke tampilan main di dalam variabel urlpatterns
