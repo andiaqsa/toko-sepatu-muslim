@@ -6,7 +6,7 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Toko_Sepatu_Sunnah.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'toko_sepatu_muslim.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
