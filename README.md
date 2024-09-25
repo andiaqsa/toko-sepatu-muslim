@@ -56,7 +56,7 @@ ALLOWED_HOSTS = ["localhost", "127.0.0.1", "andi-aqsa-tokosepatumuslim.pbp.cs.ui
 19. Setelah mendapatkan Project Credentials dan Project Command, jalankan instruksi project command
 
 
-2)..
+2)...
 
 3). Fungsi git dalam pengembangan perangkat lunak adalah:
     • Membantu mengorganisir folder project dengan optimal sesuai versinya. Dimana akan tersimpan 1 project yang disimpan dengan menggunakan database khusus dengan isi dokumen semua file versi proyek yang Anda miliki.  
