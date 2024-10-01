@@ -1,14 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'navbar.html' %}
 <h1>TOKO SEPATU MUSLIM</h1>
 
-<img src="Sepatu.jpg" />
-
-...
-<h5>NAME:  </h5>
+<h5>Product: </h5>
 <p>{{ name }}<p>
-<h5>PRICE: </h5>
-<p>{{ price }}<p>
-<h5>DESCRIPTION: </h5>
+<br>
+<img src="Sepatu.jpg" />
+<br><br>
+
+<h5>Price:</h5>
+<p>{{ price }}</p>
+
+<h5>Description: </h5>
 <p>{{ description }}<p>
-<h5>STOCK: </h5>
+
+<h5>Stock: </h5>
 <p>{{ stock }}<p>
-...
+
+{% if prod_entries %}
+<p>Belum ada barang yang dimasukkan ke keranjang.</p>
+{% else %}
+<table>
+  <tr>
+    <th>Product Name</th>
+    <th>Time</th>
+    <th>Price</th>
+    <th>Description</th>
+    <th>Stock</th>
+  </tr>
+
+  {% comment %} Berikut cara memperlihatkan data mood di bawah baris ini 
+  {% endcomment %} 
+  {% for product in prod_entries %}
+  <tr>
+    <td>{{product.name}}</td>
+    <td>{{product.time}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.description}}</td>
+    <td>{{product.stock}}</td>
+    <td>
+      <a href="{% url 'main:edit_product' product.pk %}">
+          <button>
+              Edit
+          </button>
+      </a>
+    </td>
+    <td>
+      <a href="{% url 'main:delete_product' product.pk %}">
+          <button>
+              Delete
+          </button>
+      </a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %}
+
+<br />
+
+<a href="{% url 'main:creat_product' %}">
+    <button>Add New Product</button>
+</a>
+<a href="{% url 'main:logout' %}">
+  <button>Logout</button>
+  <h5>Sesi terakhir login: {{ last_login }}</h5>
+</a>
+  
+<br>
+<p>Thank you for using our store</p>
+{% endblock content %}
