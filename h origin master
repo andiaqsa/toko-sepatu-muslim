@@ -1,0 +1,77 @@
+[33mcommit faabc116f43bef5c715d9979602fbc2b4aeb4f6a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31mpws/master[m[33m)[m
+Author: ANDI AQSA MAPPATUNRU MARZUKI <andiaqsa365@gmail.com>
+Date:   Tue Oct 1 22:03:48 2024 +0700
+
+    set debug = true
+
+[33mcommit 19e50aeb868ef433ed3125aadac94a3facb4c87a[m
+Author: ANDI AQSA MAPPATUNRU MARZUKI <andiaqsa365@gmail.com>
+Date:   Tue Oct 1 22:02:24 2024 +0700
+
+    Set DEBUG to True for debugging
+
+[33mcommit 492dd87dda3c60223dc354a487c5d01200132fa2[m
+Author: ANDI AQSA MAPPATUNRU MARZUKI <andiaqsa365@gmail.com>
+Date:   Tue Oct 1 17:53:23 2024 +0700
+
+    Updated ALLOWED_HOSTS
+
+[33mcommit 55ca51249c39fe55b151182909996c6bd1fc2af5[m
+Author: ANDI AQSA MAPPATUNRU MARZUKI <andiaqsa365@gmail.com>
+Date:   Tue Oct 1 17:24:15 2024 +0700
+
+    Updated admin.py and settings.py
+
+[33mcommit 030b8ac09749aadd3b30c626ce9132090f442a01[m[33m ([m[1;31mpws/main[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: ANDI AQSA MAPPATUNRU MARZUKI <andiaqsa365@gmail.com>
+Date:   Tue Oct 1 01:08:01 2024 +0700
+
+    tutorial 4 done
+
+[33mcommit 0b10edaec691e5e7eba5bb828cbad54878b6c064[m
+Author: ANDI AQSA MAPPATUNRU MARZUKI <andiaqsa365@gmail.com>
+Date:   Tue Oct 1 00:54:05 2024 +0700
+
+    tutorial 4 done
+
+[33mcommit 42bc078556d1bf94c3d4f5d345252518365bb3a3[m
+Author: ANDI AQSA MAPPATUNRU MARZUKI <andiaqsa365@gmail.com>
+Date:   Tue Oct 1 00:30:30 2024 +0700
+
+    tutorial 4 done
+
+[33mcommit 293d20be1d55c03427ad3d92a838fc0a5b159198[m
+Author: ANDI AQSA MAPPATUNRU MARZUKI <andiaqsa365@gmail.com>
+Date:   Wed Sep 25 08:03:48 2024 +0700
+
+    Tutorial 3 selesai
+
+[33mcommit 9b79327be9d57cf8fa0d792b3d8366876cad91b2[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: andiaqsa <andiaqsa365@gmail.com>
+Date:   Wed Sep 18 13:58:25 2024 +0700
+
+    aqsaaa
+
+[33mcommit 6693048e60d713ea180f8ca09ee366fec69ed40a[m
+Author: andiaqsa <andiaqsa365@gmail.com>
+Date:   Wed Sep 4 15:57:19 2024 +0700
+
+    Tutorial 1 selesai
+
+[33mcommit f7b63b85f83c7ff6ba78ee4479342da0b3cef271[m
+Author: andiaqsa <andiaqsa365@gmail.com>
+Date:   Wed Sep 4 15:43:10 2024 +0700
+
+    aqsaa
+
+[33mcommit c20b38ae39b8456dad7b0093d55b6a2bd25f2d88[m
+Author: andiaqsa <andiaqsa365@gmail.com>
+Date:   Wed Sep 4 12:21:21 2024 +0700
+
+    aqsaa
+
+[33mcommit 464f7429326d5bacd318d947e40caf768b1509b2[m
+Author: andiaqsa <andiaqsa365@gmail.com>
+Date:   Wed Sep 4 12:00:58 2024 +0700
+
+    aqsaa
