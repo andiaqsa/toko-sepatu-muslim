@@ -77,3 +77,86 @@ ALLOWED_HOSTS = ["localhost", "127.0.0.1", "andi-aqsa-tokosepatumuslim.pbp.cs.ui
 
 5). Disebut sebagai ORM (Object-Relational-Mapping) karena model di Django bertindak sebagai penghubung antara objek Python dan relasi database, sehingga memungkinkan pengembang bekerja dengan database menggunakan objek Python tanpa menulis query SQL secara langsung. 
 
+
+
+                Tugas 5 
+Andi Aqsa Mappatunru Marzuki
+2306275046
+
+1). Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
+
+Urutan prioritas pengambilan CSS Selector adalah berdasarkan specificity dan cascadenya, yaitu:
+ • Inline Styles, yang ditulis pada HTML dengan atribut style= ""
+ • ID Selector, seperti 
+ #my-id {
+    color: red;
+ }
+ • Class Selector,Attribute Selector, Pseudo-class
+  contohnya;
+  .my-class {
+    color: blue;
+  }
+
+  [type="text"] {
+      color: red;
+  }
+
+  :hover {
+      color: yellow;
+  }
+
+• Element/Tag Selector
+    div {
+    color: yellow;
+    }
+
+2). Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design!
+
+Responsive design penting dalam pengembangan aplikasi web karena memungkinkan sebuah website untuk menyesuaikan tampilannya secara dinamis berdasarkan perangkat yang digunakan oleh pengguna, seperti desktop, tablet, atau ponsel.
+contoh aplikasi yg sudah menerapkan responsive design: Youtube, Twiter
+Aplikasi yang belum menggunakan: website pemerintah yang sudah lama
+
+
+3). Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
+
+• Padding adalah ruang antara konten elemen dan border elemen. Padding mengontrol jarak di dalam elemen itu sendiri, antara konten elemen (seperti teks atau gambar) dan tepi dalam elemen.
+
+cara implementasi:
+div {
+    padding: 20px;  /* Menambahkan padding 20px ke semua sisi */
+}
+
+• Border adalah garis pembatas yang mengelilingi elemen HTML, antara padding dan margin. Border memisahkan konten dan padding elemen dari elemen lainnya di luar elemen tersebut.
+cara implementasi:
+div {
+    border: 2px solid black;  /* Border hitam solid dengan ketebalan 2px */
+}
+
+• Margin adalah ruang di luar border elemen. Margin mengontrol jarak antara elemen satu dengan elemen lainnya di dalam halaman.
+cara implementasi:
+div {
+    margin: 10px;  /* Memberikan jarak 10px pada semua sisi elemen */
+}
+
+4). Jelaskan konsep flex box dan grid layout beserta kegunaannya!
+
+Konsep Utama Flex box:
+Flex box mengatur elemen di sepanjang satu sumbu, baik sumbu utama (row atau column) maupun sumbu silang (cross axis).
+Cocok digunakan untuk tata letak satu dimensi: mengatur elemen dalam satu arah, baik secara horizontal maupun vertikal.
+Fleksibel dan responsif terhadap perubahan ukuran layar atau kontainer.
+
+Kegunaan Flex box:
+Sangat cocok untuk layout sederhana: Seperti mengatur navbar, mengatur elemen dalam satu baris atau kolom, atau mengatur kotak di dalam kolom/baris tunggal.
+Penggunaan populer: Header, footer, navigation bar, card layout, dan tata letak sederhana di mana elemen-elemen perlu diatur secara fleksibel.
+
+Konsep Utama Grid Layout:
+Grid menggunakan baris dan kolom, yang memungkinkan pembuatan tata letak dua dimensi.
+Setiap elemen grid ditempatkan di cell tertentu yang dapat direntangkan di beberapa baris atau kolom.
+Memungkinkan kontrol yang lebih presisi dibandingkan flexbox dalam tata letak kompleks.
+
+Kegunaan Grid Layout:
+Sangat cocok untuk layout kompleks: Seperti tata letak halaman dengan banyak kolom dan baris (misalnya, layout dashboard, galeri gambar, atau tata letak majalah).
+Mudah mengatur elemen secara dua dimensi: Elemen dapat disusun dalam grid yang fleksibel dan responsif.
+
+5). Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
+
