@@ -160,3 +160,123 @@ Mudah mengatur elemen secara dua dimensi: Elemen dapat disusun dalam grid yang f
 
 5). Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
 
+
+
+                TUGAS 6 
+Andi Aqsa Mappatunru Marzuki
+2306275046
+
+1). Jelaskan manfaat dari penggunaan JavaScript dalam pengembangan aplikasi web!
+
+penggunaan JavaScript dalam pengembangan aplikasi web tentunya memberikan banyak manfaat, diantaranya:
+
+• Interaktivitas Dinamis
+JavaScript memungkinkan pengembang untuk membuat halaman web yang interaktif dan responsif. Misalnya, elemen-elemen seperti tombol, formulir, dan menu navigasi dapat bereaksi terhadap tindakan pengguna (misalnya klik, hover, input). Contohnya:
+
+- Validasi Formulir: Formulir dapat diperiksa langsung di sisi klien sebelum dikirim ke server, memberikan respons cepat jika ada kesalahan input.
+
+- AJAX (Asynchronous JavaScript and XML): Menggunakan AJAX, JavaScript memungkinkan pengambilan data dari server tanpa perlu memuat ulang seluruh halaman. Ini meningkatkan kecepatan dan efisiensi interaksi pengguna dengan aplikasi.
+
+• Pengalaman Pengguna yang lebih baik
+
+JavaScript memungkinkan aplikasi web untuk memperbarui konten halaman secara dinamis tanpa harus memuat ulang seluruh halaman. Ini membuat aplikasi terasa lebih cepat dan responsif, sehingga meningkatkan pengalaman pengguna secara keseluruhan. Contoh:
+
+Single Page Applications (SPA): JavaScript adalah dasar dari SPA seperti React dan Angular, di mana hanya konten yang berubah diperbarui di halaman, tanpa memuat ulang seluruh halaman.
+
+• Pengembangan Cepat dan Mudah
+
+JavaScript memiliki ekosistem yang kaya dengan pustaka dan framework yang memudahkan pengembangan aplikasi web. Misalnya, pustaka seperti jQuery, dan framework seperti React, Vue.js, dan Angular membantu mempercepat pengembangan fitur-fitur kompleks dengan kode yang lebih sedikit dan lebih mudah dikelola.
+
+• Efisiensi Penggunaan Bandwidth
+
+Karena JavaScript dijalankan di sisi klien (browser), beberapa tugas komputasi dapat dipindahkan dari server ke pengguna. Ini dapat mengurangi beban server dan penggunaan bandwidth karena hanya data yang relevan yang dikirim bolak balik antara klien dan server.
+
+2). Jelaskan fungsi dari penggunaan await ketika kita menggunakan fetch()! Apa yang akan terjadi jika kita tidak menggunakan await?
+
+
+Fungsi dari penggunaan await ketika kita menggunakan fetch() dalam JavaScript adalah untuk membuat proses pengambilan data (fetching) bersifat asinkron dan menunggu hingga operasi fetch() selesai sebelum melanjutkan ke baris kode berikutnya. Dengan menggunakan await, kita dapat menulis kode asinkron yang tampak lebih mirip kode sinkron, lebih mudah dibaca dan dipahami.
+
+Jika kita tidak menggunakan await ketika kita menggunakan fetch(), maka kode akan berjalan asinkron sepenuhnya dan fetch() akan mengembalikan promise segera tanpa perlu menunggu datanya selesai diambil. Akibatnya, kode dibawah fetch() akan dieksekusi sebelum data dari fetch() tersedia.
+
+
+3). Mengapa kita perlu menggunakan decorator csrf_exempt pada view yang akan digunakan untuk AJAX POST?
+
+Kita perlu menggunakan decorator csrf_exempt pada view karena Decorator csrf_exempt membuat Django tidak perlu mengecek keberadaan csrf_token pada POST request yang dikirimkan ke fungsi ini, dalam beberapa kasus, berguna untuk menonaktifkan proteksi CSRF (Cross-Site Request Forgery) ketika pengiriman data dilakukan tanpa menyertakan token CSRF. Namun, ini bukan solusi yang direkomendasikan untuk keamanan jangka panjang.
+
+
+4). Pada tutorial PBP minggu ini, pembersihan data input pengguna dilakukan di belakang (backend) juga. Mengapa hal tersebut tidak dilakukan di frontend saja?
+
+Pembersihan data input pengguna dilakukan di belakang (backend) juga, dan tidak hanya dilakukan di frontend saja karena:
+
+• Keamanan yang Lebih Kuat
+
+Frontend adalah tempat di mana pengguna berinteraksi langsung dengan aplikasi, dan kode JavaScript di frontend dapat dengan mudah dilihat, dimodifikasi, atau dilewati oleh pengguna berbahaya. Jika pembersihan data hanya dilakukan di frontend, penyerang bisa memodifikasi atau melewati validasi tersebut dengan menggunakan alat seperti browser developer tools atau mengirim request manual melalui alat seperti Postman atau cURL.
+
+• Mencegah Serangan Keamanan
+
+Serangan seperti Cross-Site Scripting (XSS), SQL Injection, atau Command Injection adalah contoh ancaman keamanan yang bisa terjadi jika data input tidak dibersihkan dengan benar. Pembersihan di backend memastikan bahwa data yang masuk ke dalam basis data atau sistem lainnya telah difilter dari karakter berbahaya atau elemen yang dapat menyebabkan eksekusi kode berbahaya.
+
+Jika hanya mengandalkan pembersihan di frontend, serangan ini masih bisa dilakukan oleh penyerang yang dapat mengabaikan pembersihan frontend dan langsung berinteraksi dengan backend.
+
+• Konsistensi dalam Validasi Data
+
+Backend memastikan bahwa setiap input diproses secara konsisten, bahkan jika terdapat bug atau kekurangan dalam validasi frontend.
+
+Ini memastikan bahwa logika pembersihan dan validasi selalu berlaku pada semua jenis input, baik dari browser, aplikasi mobile, maupun alat API lainnya.
+
+
+5).  Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
+
+Step by Step:
+
+Mengubah tugas 5 yang telah dibuat sebelumnya menjadi menggunakan AJAX.
+
+ AJAX GET
+ Ubahlah kode cards data product agar dapat mendukung AJAX GET.
+
+	Untuk mendapatkan objek-objek produk dari endpoint /json, pertama-tama saya menghapus product_entries = Product.objects.filter(user=request.user) dan product_entries': product_entries, di views.py karena kedua baris tersebut sudah redundant (tidak digunakan lagi). Selanjutnya saya memfilter penampilan pada show_json dan show_xml dengan menambahkan data = Product.objects.filter(user=request.user) di baris paling atas fungsi show_json dan show_xml. 
+	
+	Kemudian, pada main.html, saya menginisialisasi sebuah id baru dengan nama product_cards, membuat fungsi baru didalam block script yang saya namakan getProductEntries(), dan menghapus block conditional di product_entries. 
+
+Lakukan pengambilan data product menggunakan AJAX GET. Pastikan bahwa data
+yang diambil hanyalah data milik pengguna yang logged-in.
+
+Untuk memastikan data hanyalah milik pengguna, pada tugas sebelumnya sudah terdapat  @login_required(login_url='/login') yang memastikan kalau dia telah logged-in. Kemudian fungsi show_json yang sudah diubah akan mengembalikan data json milik pengguna yang login. AJAX GET request akan di handle oleh async function getProductEntries() di main.html. Product.objects.filter(user=request.user) dalam fungsi show_json memastikan bahwa setiap pengguna hanya dapat mengakses data produk mereka sendiri.
+
+AJAX POST
+Buatlah sebuah tombol yang membuka sebuah modal dengan form untuk 
+menambahkan product
+
+Di dalam main.html, saya menambahkan sebuah tombol yang akan membuka modal ketika diklik.
+Dengan menggunakan onclick="showModal();" built in javascript pada tombol akan memanggil showModal() yang dimana modal tersebut berisi form untuk menambahkan produk baru.
+Berikut kode implementasinya:
+html
+<button
+  data-modal-target="crudModal"
+  data-modal-toggle="crudModal"
+  class="btn bg-[#7289da] hover:bg-[#5a6bbd] text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 mx-4"
+  onclick="showModal();"
+>
+  Add New Product by AJAX
+</button>
+
+
+Buatlah fungsi view baru untuk menambahkan product baru ke dalam basis data.
+
+Saya membuat fungsi view baru di views.py bernama add_product_ajax, namun sebelumnya saya mengimpor csrf_exempt dan require_POST karena csrf_exempt karena permintaan dilakukan via AJAX dan view hanya menerima permintaan POST. kedua import tersebut ditaruh diatas fungsi add_product_entry_ajax dengan @csrf_exempt dan @require_POST. Saya juga mengimport dan menngunakan strip_tags di dalam fungsi tersebut guna untuk mencegah serangan XSS.
+
+Buatlah path /create-ajax/ yang mengarah ke fungsi view yang baru kamu buat.
+
+Saya menambahkan path baru berupa path('create-product-ajax', add_product_ajax, name='add_product_ajax'), di urls.py. Tujuan saya membuat path ini agar request POST ditangani dan fungsi add_product_ajax akan dipanggil.
+Berikut snippet implementasinya di kode saya:
+
+python
+urlpatterns = [
+	# ... path lainnya
+	path('create-product-ajax', add_product_ajax, name='add_product_ajax'),
+]
+
+
+
+Hubungkan form yang telah kamu buat di dalam modal kamu ke path /create-ajax/.
+Lakukan refresh pada halaman utama secara asinkronus untuk menampilkan daftar product terbaru tanpa reload halaman utama secara keseluruhan

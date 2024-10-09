@@ -10,16 +10,18 @@ from django.core import serializers
 from django.shortcuts import render, redirect, reverse 
 from main.forms import ProductEntryForm
 from main.models import Product
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
+from django.utils.html import strip_tags
 
 @login_required(login_url='/login')
 def show_main(request):
-    prod_entries = Product.objects.filter(user=request.user)
+
     context = {
         'name' : request.user.username,        
         'description': 'Sepatu ini dibuat menggunakan bahan yang bagus, serta produk original',
         'price': 'Rp300.000',
         'stock' : '15',
-        'prod_entries': prod_entries,
         'last_login': request.COOKIES['last_login'],
     }
 
@@ -38,11 +40,11 @@ def create_product(request):
     return render(request, "create_product.html", context)
 
 def show_xml(request):
-    data = Product.objects.all()
+    data = Product.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
 
 def show_json(request):
-    data = Product.objects.all()
+    data = Product.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
 
 
@@ -110,3 +112,34 @@ def delete_product(request, id):
     product.delete()
     # Kembali ke halaman awal
     return HttpResponseRedirect(reverse('main:show_main'))
+
+# AJAX GET untuk mengambil daftar produk
+@login_required(login_url='/login')
+def get_product_entries(request):
+    products = Product.objects.filter(user=request.user).values('name', 'price', 'description', 'stock', 'pk', 'created_at')
+    product_list = list(products)  # Konversi ke list
+    return JsonResponse(product_list, safe=False)
+
+# AJAX POST untuk menambahkan produk baru
+@csrf_exempt
+@require_POST
+@login_required(login_url='/login')
+def add_product_ajax(request):
+    name = strip_tags(request.POST.get('name'))  # Bersihkan input name
+    price = request.POST.get('price')  # Price adalah angka, jadi tidak perlu strip_tags
+    description = strip_tags(request.POST.get('description'))  # Bersihkan input description
+    stock = request.POST.get('stock')  # Stock adalah angka, jadi tidak perlu strip_tags
+
+    if name and price and description and stock:
+        # Buat produk baru
+        product = Product(
+            name=name,
+            price=price,
+            description=description,
+            stock=stock,
+            user=request.user
+        )
+        product.save()
+        return JsonResponse({'status': 'success'}, status=201)
+    else:
+        return JsonResponse({'status': 'error', 'message': 'All fields are required!'}, status=400)
